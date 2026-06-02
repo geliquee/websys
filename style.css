@@ -1,0 +1,908 @@
+/* =============================================
+   ORIGINAL STYLES (Login / Auth Pages)
+   ============================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#efefef;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* CONTAINER */
+
+.container{
+    width:1150px;
+    max-width:100%;
+    min-height:760px;
+    background:#ffffff;
+    border-radius:24px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* LEFT PANEL */
+
+.left-panel{
+    background:linear-gradient(
+        135deg,
+        #d9d9d9,
+        #cfcfcf
+    );
+    padding:45px;
+    display:flex;
+    flex-direction:column;
+    color:#000;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#bdbdbd;
+    color:#4a4a4a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:700;
+    font-size:18px;
+}
+
+.brand h1{
+    font-size:22px;
+    font-weight:600;
+}
+
+.content{
+    margin-top:40px;
+}
+
+.content h2{
+    font-size:46px;
+    margin-bottom:15px;
+    line-height:1.2;
+}
+
+.content p{
+    color:#555;
+    line-height:1.8;
+    max-width:500px;
+}
+
+/* PLACEHOLDER */
+
+.placeholder-box{
+    width:100%;
+    height:380px;
+    margin-top:35px;
+    background:#c7c7c7;
+    border:2px dashed #a8a8a8;
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#666;
+    font-size:28px;
+    font-weight:600;
+}
+
+/* RIGHT PANEL */
+
+.right-panel{
+    background:#f7f7f7;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px;
+}
+
+.back-btn{
+    position:absolute;
+    top:30px;
+    right:30px;
+
+    text-decoration:none;
+    color:#000;
+
+    background:#fff;
+    border:1px solid #bdbdbd;
+
+    padding:10px 18px;
+    border-radius:10px;
+
+    font-size:14px;
+    font-weight:500;
+
+    transition:0.3s ease;
+}
+
+.back-btn:hover{
+    background:#ececec;
+}
+
+.login-box{
+    width:100%;
+    max-width:420px;
+}
+
+.login-box h2{
+    font-size:48px;
+    color:#111;
+    margin-bottom:10px;
+}
+
+.login-box p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+/* FORM */
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:500;
+    color:#2d2d2d;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px 16px;
+
+    border:1px solid #c8c8c8;
+    border-radius:14px;
+
+    background:#fff;
+
+    outline:none;
+    font-size:15px;
+
+    transition:0.3s;
+}
+
+.input-group input:focus{
+    border-color:#7d7d7d;
+    box-shadow:0 0 0 4px rgba(0,0,0,0.08);
+}
+
+.input-group:last-of-type{
+    margin-bottom:28px;
+}
+
+/* BUTTON */
+
+.login-btn{
+    width:100%;
+    padding:16px;
+
+    border:none;
+    border-radius:14px;
+
+    background:#1f1f1f;
+    color:#fff;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.login-btn:hover{
+    background:#000;
+    transform:translateY(-2px);
+}
+
+/* FOOTER LINKS */
+
+.signup-text{
+    margin-top:24px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+.signup-text a{
+    color:#111;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.signup-text a:hover{
+    text-decoration:underline;
+}
+
+@media (max-width: 900px){
+
+    .container{
+        grid-template-columns:1fr;
+        min-height:auto;
+    }
+
+    .left-panel{
+        display:none;
+    }
+
+    .right-panel{
+        padding:40px 30px;
+    }
+
+    .back-btn{
+        top:20px;
+        right:20px;
+    }
+
+    .login-box h2{
+        font-size:40px;
+    }
+}
+
+
+/* =============================================
+   ABOUT PAGE STYLES
+   ============================================= */
+
+/* Override body for about page so it doesn't use flex centering */
+.about-body {
+    display: block;
+    background: #efefef;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* --- HEADER --- */
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #d9d9d9;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.about-logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.about-logo-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #bdbdbd;
+    color: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.about-site-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1f1f1f;
+}
+
+.about-header-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.about-btn-outline {
+    padding: 10px 20px;
+    font-size: 0.88rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1f1f1f;
+    transition: background 0.25s, box-shadow 0.25s;
+}
+
+.about-btn-outline:hover {
+    background: #efefef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.about-login-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- NAV --- */
+.about-nav {
+    padding: 0 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.about-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.about-nav a {
+    display: block;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 14px 0;
+    border-bottom: 3px solid transparent;
+    transition: color 0.25s, border-color 0.25s;
+}
+
+.about-nav a:hover {
+    color: #1f1f1f;
+}
+
+.about-nav-active {
+    color: #1f1f1f !important;
+    border-bottom: 3px solid #1f1f1f !important;
+}
+
+/* --- MAIN --- */
+.about-main {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 32px 60px;
+}
+
+/* --- HERO BANNER --- */
+.about-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 64px 0 56px;
+}
+
+.about-hero-tag {
+    display: inline-block;
+    background: #e0e0e0;
+    color: #4a4a4a;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.about-hero-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.about-hero-sub {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 480px;
+}
+
+.about-hero-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.about-stat-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.about-stat-num {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    line-height: 1;
+}
+
+.about-stat-label {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+.about-stat-divider {
+    height: 1px;
+    background: #e8e8e8;
+    width: 100%;
+}
+
+/* --- MISSION & VISION --- */
+.about-mv-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 72px;
+}
+
+.about-mv-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #d9d9d9;
+    padding: 36px 32px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-mv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+}
+
+.about-mv-icon {
+    width: 52px;
+    height: 52px;
+    background: #1f1f1f;
+    color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.about-mv-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-bottom: 12px;
+}
+
+.about-mv-text {
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* --- SECTION HEADER (shared) --- */
+.about-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-bottom: 10px;
+}
+
+.about-section-sub {
+    font-size: 0.95rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* --- WHAT WE DO --- */
+.about-what-section {
+    margin-bottom: 72px;
+}
+
+.about-what-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.about-what-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #d9d9d9;
+    padding: 32px 28px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-what-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+}
+
+.about-what-icon-wrap {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    width: 56px;
+    height: 56px;
+    background: #e8e8e8;
+    border-radius: 10px;
+    border: 1px solid #d0d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-what-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-bottom: 12px;
+}
+
+.about-what-card-text {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.about-what-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.about-what-list li {
+    font-size: 0.85rem;
+    color: #444;
+    padding-left: 18px;
+    position: relative;
+    font-weight: 500;
+}
+
+.about-what-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #7d7d7d;
+    font-size: 0.8rem;
+}
+
+/* --- OUR VALUES --- */
+.about-values-section {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+    padding: 52px 48px;
+    margin-bottom: 72px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.about-value-item {
+    text-align: center;
+}
+
+.about-value-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin: 0 auto 18px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #1f1f1f;
+    letter-spacing: 0.5px;
+}
+
+.about-value-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-bottom: 10px;
+}
+
+.about-value-desc {
+    font-size: 0.86rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* --- TEAM --- */
+.about-team-section {
+    margin-bottom: 72px;
+}
+
+.about-team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.about-team-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #d9d9d9;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.1);
+}
+
+.about-team-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #c7c7c7;
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    border: 3px solid #e4e4e4;
+}
+
+.about-team-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-bottom: 6px;
+}
+
+.about-team-role {
+    display: block;
+    font-size: 0.78rem;
+    color: #888;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.about-team-bio {
+    font-size: 0.84rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* --- CTA BANNER --- */
+.about-cta-section {
+    background: #1f1f1f;
+    border-radius: 20px;
+    padding: 60px 48px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.about-cta-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.about-cta-sub {
+    font-size: 0.95rem;
+    color: #aaaaaa;
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.about-cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-cta-btn-primary {
+    padding: 14px 32px;
+    background: #ffffff;
+    color: #1f1f1f;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.about-cta-btn-primary:hover {
+    background: #efefef;
+    transform: translateY(-2px);
+}
+
+.about-cta-btn-secondary {
+    padding: 14px 32px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1px solid #555;
+    text-decoration: none;
+    transition: border-color 0.25s, transform 0.25s;
+}
+
+.about-cta-btn-secondary:hover {
+    border-color: #aaaaaa;
+    transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
+.about-footer {
+    border-top: 1px solid #d9d9d9;
+    padding: 24px 40px;
+    text-align: center;
+    background: #ffffff;
+    margin-top: 60px;
+}
+
+.about-footer a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0 8px;
+    transition: color 0.2s;
+}
+
+.about-footer a:hover {
+    color: #1f1f1f;
+}
+
+.about-footer-sep {
+    font-size: 0.85rem;
+    color: #bdbdbd;
+}
+
+/* =============================================
+   ABOUT PAGE – RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1024px) {
+    .about-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-header {
+        padding: 14px 20px;
+    }
+    .about-nav {
+        padding: 0 20px;
+    }
+    .about-nav ul {
+        gap: 20px;
+    }
+    .about-main {
+        padding: 0 20px 48px;
+    }
+    .about-hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 40px 0 36px;
+    }
+    .about-hero-heading {
+        font-size: 2.2rem;
+    }
+    .about-hero-card {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 28px 20px;
+    }
+    .about-stat-divider {
+        width: 1px;
+        height: auto;
+        align-self: stretch;
+    }
+    .about-stat-block {
+        padding: 0 12px;
+    }
+    .about-mv-section {
+        grid-template-columns: 1fr;
+    }
+    .about-what-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-values-section {
+        padding: 36px 24px;
+    }
+    .about-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .about-team-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-cta-section {
+        padding: 40px 24px;
+    }
+    .about-cta-heading {
+        font-size: 1.6rem;
+    }
+    .about-section-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-site-name {
+        display: none;
+    }
+    .about-hero-heading {
+        font-size: 1.8rem;
+    }
+    .about-hero-card {
+        flex-direction: column;
+    }
+    .about-stat-divider {
+        width: 100%;
+        height: 1px;
+    }
+    .about-values-grid {
+        grid-template-columns: 1fr;
+    }
+}
